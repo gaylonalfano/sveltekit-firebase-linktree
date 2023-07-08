@@ -1,6 +1,6 @@
 // NOTE: This is the Firebase CLIENT Setup
 import { initializeApp } from 'firebase/app';
-import { getFirebase } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { getStorage } from 'firebase/storage';
 
