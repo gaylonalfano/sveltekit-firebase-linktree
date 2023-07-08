@@ -1,10 +1,10 @@
 <script lang="ts">
 	// NOTE: This is a helper/wrapper component that wraps
 	// other components throughout the app to verify the user
-	import { userStore } from '$lib/stores/user-store';
+	import { user } from '$lib/firebase';
 </script>
 
-{#if $userStore}
+{#if $user}
 	<slot />
 {:else}
 	<p class="text-error my-10">
