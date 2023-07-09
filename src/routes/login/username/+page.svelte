@@ -3,6 +3,9 @@
 	import { db, user } from '$lib/firebase';
 	import { doc, getDoc, getDocs, writeBatch } from 'firebase/firestore';
 
+	// TODO: Errors connecting to Firebase when choosing username.
+	// Read git log for details.
+
 	let username = '';
 	let loading = false;
 	let isAvailable = false;
@@ -64,8 +67,12 @@
 </script>
 
 <AuthCheck>
-	<h2>Username</h2>
 
+  {#if $userData.username}
+    <p>
+      Your username is <span>@{$userData.username}</span>
+    </p>
+  {:else}
 	<form action="" class="w-2/5" on:submit|preventDefault={confirmUsername}>
 		<input
 			type="text"
